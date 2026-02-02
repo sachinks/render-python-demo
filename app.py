@@ -1,6 +1,17 @@
-from flask import Flask
+from flask import Flask, request
 import os
 app = Flask(__name__)
+
+
+@app.route("/add")
+def add_numbers():
+    try:
+        a = int(request.args.get("a"))
+        b = int(request.args.get("b"))
+        return f"Result: {a + b}"
+    except:
+        return "Please provide numbers like /add?a=2&b=3"
+
 
 @app.route("/")
 def home():
