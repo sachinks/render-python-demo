@@ -13,13 +13,13 @@ def add_numbers():
         return "Please provide numbers like /add?a=2&b=3"
 
 @app.route("/deduct")
-def add_numbers():
+def deduct_numbers():
     try:
         a = int(request.args.get("a"))
         b = int(request.args.get("b"))
         return f"Result: {a - b}"
     except:
-        return "Please provide numbers like /add?a=2&b=3"
+        return "Please provide numbers like /deduct?a=2&b=3"
 
 
 @app.route("/")
